@@ -1,3 +1,9 @@
+function showAlert(event) {
+  event.preventDefault();
+  alert("Message Sent");
+  event.target.reset();
+}
+
 let lastScrollTop = 0;
 const navbar = document.querySelector(".navbar");
 
@@ -5,37 +11,35 @@ window.addEventListener("scroll", () => {
   let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
   if (scrollTop > lastScrollTop) {
-
     navbar.style.top = "-87px";
   } else {
-
     navbar.style.top = "0";
   }
   lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
 });
 
-  const slideIndices = {
-    france: 0,
-    japan: 0
-  };
+const slideIndices = {
+  france: 0,
+  japan: 0,
+};
 
-  function moveSlide(tour, direction) {
-    const track = document.getElementById(`track-${tour}`);
-    const slides = track.querySelectorAll('img');
-    const totalSlides = slides.length;
+function moveSlide(tour, direction) {
+  const track = document.getElementById(`track-${tour}`);
+  const slides = track.querySelectorAll("img");
+  const totalSlides = slides.length;
 
-    slideIndices[tour] += direction;
+  slideIndices[tour] += direction;
 
-    if (slideIndices[tour] < 0) {
-      slideIndices[tour] = totalSlides - 1;
-    } else if (slideIndices[tour] >= totalSlides) {
-      slideIndices[tour] = 0;
-    }
-
-    const slideWidth = slides[0].clientWidth;
-    const offset = -slideIndices[tour] * slideWidth;
-    track.style.transform = `translateX(${offset}px)`;
+  if (slideIndices[tour] < 0) {
+    slideIndices[tour] = totalSlides - 1;
+  } else if (slideIndices[tour] >= totalSlides) {
+    slideIndices[tour] = 0;
   }
+
+  const slideWidth = slides[0].clientWidth;
+  const offset = -slideIndices[tour] * slideWidth;
+  track.style.transform = `translateX(${offset}px)`;
+}
 
 function showCarousel(tour) {
   document.getElementById("carousel-france").style.display = "none";
@@ -71,7 +75,7 @@ const multiPackageTours = {
 };
 
 function resetPackageSelect() {
-  tourPackageSelect.innerHTML = ""; 
+  tourPackageSelect.innerHTML = "";
   tourPriceInput.value = "";
   tourPackageSelect.removeAttribute("readonly");
   tourPackageSelect.disabled = false;
@@ -106,7 +110,7 @@ function setupBookingFormForTour(tourName, packageName, packagePrice) {
       tourPriceInput.value = packages[selected] || "";
     });
   } else {
-    tourPackageSelect.innerHTML = ""; 
+    tourPackageSelect.innerHTML = "";
     tourPackageSelect.value = packageName || "";
     tourPriceInput.value = packagePrice || "";
     tourPackageSelect.setAttribute("readonly", true);
@@ -116,9 +120,9 @@ function setupBookingFormForTour(tourName, packageName, packagePrice) {
 
 document.querySelectorAll(".book-btn").forEach((btn) => {
   btn.addEventListener("click", () => {
-    const tourName = btn.dataset.tour; 
-    const packageName = btn.dataset.package; 
-    const price = btn.dataset.price; 
+    const tourName = btn.dataset.tour;
+    const packageName = btn.dataset.package;
+    const price = btn.dataset.price;
 
     setupBookingFormForTour(tourName, packageName, price);
 
@@ -158,11 +162,3 @@ bookingForm.addEventListener("submit", (e) => {
   tourPriceInput.value = "";
   tourPackageSelect.value = "";
 });
-
-
-
-
-
-
-
-
