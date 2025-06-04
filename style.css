@@ -34,66 +34,70 @@ body {
     width: 100%;
   }
 
-.navbar {
+  .navbar {
     display: flex;
-    width: 100%;
-    height: 85px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    height: 87px;
+    background-color: #0f273f;
+    color: white;
     position: fixed;
     top: 0;
-    left: 0;
+    width: 100%;
     z-index: 1000;
-    background: var(--blue);
     transition: top 0.3s ease;
   }
-
-  .navbar-left {
-    width: 15%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .navbar-left img {
-    height: 80px;
-  }
-
-  .navbar-center {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-  }
-  .navbar-center a {
-    color: var(--white);
-    font-size: 18px;
-    font-weight: 500;
-    text-decoration: none;
-    padding: 10px;
-    
-    border-radius: 30px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  .navbar-center a:hover {
-    background-color: var(--br-orange);
-  }
-
+  
+  /* LEFT AND RIGHT NAV ITEMS */
+  .navbar-left,
   .navbar-right {
-    width: 20%;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+  }
+  
+  /* CENTER LOGO */
+  .navbar-center {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
+    flex: 1;
   }
-  .icon-circle {
-    border-radius: 50%;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  
+  .navbar-center img {
+    height: 60px;
+    object-fit: contain;
   }
+  
+  /* NAV LINKS */
+  .navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar a:hover {
+    color: #f26522;
+  }
+  
+  /* SOCIAL ICONS */
   .icon-circle img {
-    height: 24px;
-    width: 24px;
+    width: 22px;
+    height: 22px;
+  }
+  
+  .icon-circle {
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border-radius: 50%;
   }
 
   .hero {
@@ -214,7 +218,6 @@ body {
   
   .main-container-tour {
     padding: 2rem 1rem;
-    background: linear-gradient(to right, #f9f9f9, #eaf1f8);
     height: 850px;
   }
   
@@ -1009,3 +1012,91 @@ footer {
   box-shadow: 0 0 0 2px rgba(36, 117, 183, 0.2);
 }
 
+.airline-carousel {
+  height: 90px; /* Same as navbar */
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.carousel-track2 {
+  display: flex;
+  animation: slideCarousel 20s linear infinite;
+}
+
+.carousel-track2 img {
+  height: 60px;
+  width: auto;
+  margin: 0 30px;
+  object-fit: contain;
+}
+
+/* Animation */
+@keyframes slideCarousel {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.review-section {
+  padding: 30px 30px;
+  padding-bottom: 30px;
+  margin-bottom: 20px;
+  color: white;
+  text-align: center;
+  border-top: 3px solid #0091ff;
+}
+
+.review-section h2 {
+  font-size: 28px;
+  margin-bottom: 40px;
+  color: var(--nav-grad);
+}
+
+.review-section h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: var(--br-orange);
+  margin: 1rem auto 0;
+  border-radius: 2px;
+}
+
+.review-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.review-card {
+  background-color: var(--white);
+  padding: 20px;
+  border-radius: 15px;
+  width: 300px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  text-align: left;
+  transition: transform 0.3s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+}
+
+.review-card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: var(--nav-grad);
+}
+
+.review-card p {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 12px;
+  color: black;
+}
