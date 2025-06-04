@@ -1256,3 +1256,49 @@ footer {
 .contact .btn:hover {
   background-color: #1a4f86;
 }
+
+/* WELCOME SECTION */
+.welcome-home {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 60px 20px;
+  color: #0f273f;
+  max-width: 100%;
+  margin: 0 auto;
+  border-bottom: 3px solid #0091ff;
+}
+
+.welcome-header-left {
+  flex: 1;
+  min-width: 300px;
+  text-align: center;
+}
+
+.welcome-header-left h1 {
+  font-size: 46px;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.welcome-header-left img {
+  margin-top: 20px;
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+}
+
+.welcome-body-right {
+  flex: 1;
+  min-width: 300px;
+  text-align: justify;
+  padding: 25px 30px;
+  border-radius: 12px;
+}
+
+.welcome-body-right p {
+  font-size: 20px;
+  line-height: 1.8;
+}
