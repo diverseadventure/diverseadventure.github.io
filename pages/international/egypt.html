@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="icon" href="/images/logo.ico">
+    <title>Diverse Adventure | Egypt Tour Package</title>
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar-left">
+          <a href="index.html"><img src="/images/r.png" alt="Diverse Adventures Logo"/></a>
+        </div>
+        <div class="navbar-center">
+            <a href="/index.html">Home</a>
+            <a href="/#destinations">Destinations</a>
+        </div>
+        <div class="navbar-right">
+          <a href="https://www.facebook.com/profile.php?id=61560507242650" target="_blank">
+            <div class="icon-circle">
+              <img src="/images/facebook.png" alt="Facebook" />
+            </div>
+          </a>
+          <a href="https://www.instagram.com/diverse_adventures/" target="_blank">
+            <div class="icon-circle">
+              <img src="/images/instagram.png" alt="Instagram" />
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="whitespace"></div>
+
+      <section class="page-wrapper">
+        <div class="back-button">
+          <a href="/pages/international.html">Go Back</a>
+        </div>
+      </section>
+      
+      <div class="tour-selector">
+        <button onclick="showCarousel('france')" class="selector-btn active">Package 1</button>
+        <button onclick="showCarousel('japan')" class="selector-btn">Package 2</button>
+      </div>
+      
+      <div id="carousel-france" class="left-images-carousel">
+        <div class="carousel-wrapper">
+          <button class="carousel-btn prev" onclick="moveSlide('france', -1)">&#10094;</button>
+          <div class="carousel">
+            <div class="carousel-track" id="track-france">
+              <img src="/images/egypt1.png" />
+              <img src="/images/egypt2.png" />
+            </div>
+          </div>
+          <button class="carousel-btn next" onclick="moveSlide('france', 1)">&#10095;</button>
+        </div>
+      </div>
+      
+      <div id="carousel-japan" class="left-images-carousel" style="display: none;">
+        <div class="carousel-wrapper">
+          <button class="carousel-btn prev" onclick="moveSlide('japan', -1)">&#10094;</button>
+          <div class="carousel">
+            <div class="carousel-track" id="track-japan">
+              <img src="/images/egypt3.png" />
+              <img src="/images/egypt4.png" />
+            </div>
+          </div>
+          <button class="carousel-btn next" onclick="moveSlide('japan', 1)">&#10095;</button>
+        </div>
+      </div>     
+      </div>
+    
+      <div class="carousel-actions">
+        <button class="action-btn customize-btn">Customize</button>
+        <button class="action-btn book-btn" data-tour="Egypt">Book Now</button>
+      </div>
+    
+    
+    <div id="bookingModal" class="modal">
+      <div class="modal-content">
+        <span id="closeBooking" class="close">&times;</span>
+        <h2>Book Your Adventure!</h2>
+        <form id="bookingForm">
+    
+          <div class="form-group dual-input">
+            <div>
+            <label for="tourPackage">Tour Package</label>
+            <select id="tourPackage" name="tourPackage" class="form-input" required>
+                <option value="" disabled selected>Select a Tour Package</option>
+                <option value="Egypt Tour Package 1">Egypt Tour Package 1</option>
+                <option value="Egypt Tour Package 2">Egypt Tour Package 2</option>
+              </select>              
+        </div>
+        <div>
+            <label for="tourPrice">Tour Package Price</label>
+            <input type="text" id="tourPrice" name="tourPrice" readonly placeholder="Select a package first" />
+          </div>
+    </div>            
+    
+          <div class="form-group dual-input">
+            <div>
+              <label for="firstName">First Name</label>
+              <input type="text" id="firstName" name="firstName" placeholder="First" required />
+            </div>
+            <div>
+              <label for="lastName">Last Name</label>
+              <input type="text" id="lastName" name="lastName" placeholder="Last" required />
+            </div>
+          </div>
+    
+          <div class="form-group dual-input">
+            <div>
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="your@email.com" required />
+            </div>
+            <div>
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" placeholder="09XX-XXX-XXXX" required />
+            </div>
+          </div>
+    
+          <div class="form-group">
+            <label for="tourDate">Preferred Tour Date</label>
+            <input type="date" id="tourDate" name="tourDate" required />
+          </div>
+    
+          <div class="form-group">
+            <label for="groupSize">How many people are in your group?</label>
+            <input type="number" id="groupSize" name="groupSize" min="1" max="50" required />
+          </div>
+    
+          <div class="form-group">
+            <label>What is the best way to contact you?</label>
+            <div class="radio-group">
+              <label><input type="radio" name="contactMethod" value="Phone" required style="width: auto;"/> Phone</label>
+              <label><input type="radio" name="contactMethod" value="Email" required style="width: auto;"/> Email</label>
+            </div>
+          </div>
+    
+          <div class="form-group">
+            <label>Preferred Payment Method</label>
+            <div class="radio-group">
+              <label><input type="radio" name="paymentMethod" value="Credit Card" required style="width: auto;"/> Credit Card</label>
+              <label><input type="radio" name="paymentMethod" value="GCash" required style="width: auto;"/> GCash</label>
+              <label><input type="radio" name="paymentMethod" value="PayPal" required style="width: auto;"/> PayPal</label>
+            </div>
+          </div>
+    
+          <button type="submit" class="submit-btn">Confirm Booking</button>
+        </form>
+      </div>
+    </div>
+
+
+      <footer>
+        <div class="footer-container">
+          <div class="footer-section footer-left">
+            <img id="footer-logo" src="/images/r.png" alt="Footer Logo">
+            <h1>Discover Diversity, Live the Adventure</h1>
+            <div class="footer-contact">
+              <p><img src="/images/address.svg" class="footer-icon" alt="Address Icon"> 217 Mabini St., Poblacion Kalibo, Aklan</p>
+              <p><img src="/images/contact.svg" class="footer-icon" alt="Phone Icon"> +63 9519132953 & +63 9295058358</p>
+              <p><img src="/images/clock.svg" class="footer-icon" alt="Clock Icon"> Monday - Sunday: 8:00 AM - 8:00 PM (Philippine Standard Time)</p>
+            </div>
+          </div>
+          
+          
+          <div class="footer-section footer-right">
+            <p>Mission: At Diverse Adventures, our mission is to craft unforgettable travel experiences that celebrate the world’s diversity, connect people with unique cultures, and inspire exploration. We are dedicated to providing personalized, sustainable, and immersive journeys that empower travelers to discover new perspectives while fostering respect for global communities and environments.</p>
+            <p>Vision: To be the leading travel agency inspiring a world of fearless explorers who embrace cultural diversity, seek authentic adventures, and contribute to a more connected and sustainable planet.</p>
+            <p>Goal: Diverse Adventures is dedicated to deliver transformative travel experiences that celebrate global diversity and ignite a passion for adventure. We aim to create personalized journeys that connect travelers with unique cultures and environments, promoting respect, sustainability, and lifelong memories.</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2035 Diverse Adventures. All rights reserved.</p>
+          <div class="social-icons">
+          <a href="https://www.facebook.com/profile.php?id=61560507242650" target="_blank">
+            <img src="/images/facebook.png" alt="Facebook" />
+          </a>
+          <a href="https://www.instagram.com/diverse_adventures/" target="_blank">
+            <img src="/images/instagram.png" alt="Instagram" />
+          </a>
+        </div>
+        </div>
+      </footer>  
+      
+      
+</body>
+<script src="/index.js"></script>
+</html>
