@@ -34,41 +34,65 @@ body {
     width: 100%;
   }
 
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 30px;
-    height: 87px;
-    background-color: #0f273f;
-    color: white;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    transition: top 0.3s ease;
-  }
-  
-  /* LEFT AND RIGHT NAV ITEMS */
-  .navbar-left,
-  .navbar-right {
-    display: flex;
-    align-items: center;
-    gap: 25px;
-  }
-  
-  /* CENTER LOGO */
-  .navbar-center {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex: 1;
-  }
-  
-  .navbar-center img {
-    height: 60px;
-    object-fit: contain;
-  }
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  height: 87px;
+  background-color: #2465a7;
+  color: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: top 0.3s ease;
+}
+
+.navbar-left,
+.navbar-center,
+.navbar-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-left {
+  justify-content: flex-start;
+  gap: 25px;
+}
+
+.navbar-center {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--white); 
+  height: 100%; 
+}
+
+.navbar-right {
+  justify-content: flex-end;
+  gap: 25px;
+}
+
+.navbar-center {
+  background: rgba(255, 255, 255, 0.95); 
+  height: 100%;
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+  position: relative;
+  z-index: 2;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.navbar-center img {
+  height: 90px;
+  object-fit: contain;
+  padding-top: 5px;
+}
   
   /* NAV LINKS */
   .navbar a {
@@ -79,6 +103,7 @@ body {
     letter-spacing: 1px;
     text-transform: uppercase;
     transition: color 0.3s ease;
+    float: right;
   }
   
   .navbar a:hover {
@@ -1042,6 +1067,7 @@ footer {
     transform: translateX(-50%);
   }
 }
+
 .review-section {
   padding: 30px 30px;
   padding-bottom: 30px;
@@ -1099,4 +1125,134 @@ footer {
   line-height: 1.6;
   margin-bottom: 12px;
   color: black;
+}
+
+.about-team-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  background-color: #f4f9fb;
+}
+
+.team-card {
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  padding: 30px 20px;
+  width: 350px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.team-card h1 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #0f273f;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.team-card p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.team-photo {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+/* CONTACT SECTION */
+.contact {
+  padding: 60px 20px;
+  background-color: #f5f9fc;
+  text-align: center;
+}
+
+.contact h1 {
+  font-size: 36px;
+  color: #0f273f;
+  margin-bottom: 40px;
+}
+
+.contact .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contact .image img {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+}
+
+.contact form {
+  flex: 1;
+  min-width: 300px;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact .inputBox {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.contact input,
+.contact textarea {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: 0.3s;
+  font-family: inherit;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+  border-color: #2465a7;
+  box-shadow: 0 0 5px rgba(36, 101, 167, 0.3);
+}
+
+.contact textarea {
+  resize: vertical;
+  min-height: 50px;
+}
+
+.contact .btn {
+  background-color: #2465a7;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+.contact .btn:hover {
+  background-color: #1a4f86;
 }
